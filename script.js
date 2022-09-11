@@ -51,6 +51,52 @@ const initIsTriangleSection = () => {
 const initQuizSection = () => {};
 
 /**
+ * Area of Triangle
+ */
+
+const initAreaOfTriangleSection = () => {
+  const sideInputs = document.querySelectorAll('.side-input');
+  const calculateAreaBtn = document.querySelector('.calculate-area');
+  const result = document.querySelector('.result');
+
+  const calculateArea = () => {
+    const firstSide = parseInt(sideInputs[0].value);
+    const secondSide = parseInt(sideInputs[1].value);
+    const thirdSide = parseInt(sideInputs[2].value);
+
+    let errorMessage = '';
+    result.textContent = '';
+    if (isNaN(firstSide) || isNaN(secondSide) || isNaN(thirdSide)) {
+      errorMessage =
+        'You have given wrong inputs or no inputs, please check!! 👿';
+      result.textContent = errorMessage;
+      return;
+    }
+
+    let message = '';
+    if (
+      firstSide + secondSide > thirdSide &&
+      secondSide + thirdSide > firstSide &&
+      firstSide + thirdSide > secondSide
+    ) {
+      let semiPerimeter = (firstSide + secondSide + thirdSide) / 2;
+      let result = Math.sqrt(
+        semiPerimeter *
+          (semiPerimeter - firstSide) *
+          (semiPerimeter - secondSide) *
+          (semiPerimeter - thirdSide)
+      ).toFixed(2);
+      message = `Area of a triangle according to Heron's formula is ${result} units.`;
+    } else {
+      message = 'Enter valid lengths.';
+    }
+
+    result.textContent = message;
+  };
+  calculateAreaBtn.addEventListener('click', calculateArea);
+};
+
+/**
  * Main App function
  */
 const App = () => {
@@ -68,6 +114,7 @@ const App = () => {
     navContents[2].classList.add('nav-active');
   } else if (pathname === AREA_PAGE) {
     navContents[3].classList.add('nav-active');
+    initAreaOfTriangleSection();
   }
 };
 

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Area of Triangle</title>
+
+    <link
+      rel="shortcut icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔺</text></svg>"
+      type="image/x-icon"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔺</text></svg>"
+      type="image/x-icon"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-heading-container">
+        <h1 class="nav-heading">Fun with Triangles 🔺</h1>
+      </div>
+      <div class="nav-content">
+        <a class="nav-text-content" href="/">Is Triangle?</a>
+        <a class="nav-text-content" href="/quiz.html">Quiz</a>
+        <a class="nav-text-content" href="/hypotenuse.html">Hypotenuse</a>
+        <a class="nav-text-content" href="/area.html">Area of Triangle</a>
+      </div>
+    </nav>
+
+    <main class="main-container">
+      <h1 class="heading text-center">Area of Triangle</h1>
+
+      <div class="input-container">
+        <label for="side-1">Enter 1st side of Triangle</label>
+        <input
+          type="number"
+          id="side-1"
+          name="side-1"
+          placeholder="Enter side 1.."
+          class="side-input"
+          required
+        />
+      </div>
+
+      <div class="input-container">
+        <label for="side-2">Enter 2nd side of Triangle</label>
+        <input
+          type="number"
+          id="side-2"
+          name="side-2"
+          placeholder="Enter side 2.."
+          class="side-input"
+          required
+        />
+      </div>
+
+      <div class="input-container">
+        <label for="side-3">Enter 3rd side of Triangle</label>
+        <input
+          type="number"
+          id="side-3"
+          name="side-3"
+          placeholder="Enter side 3.."
+          class="side-input"
+          required
+        />
+      </div>
+
+      <div class="input-container">
+        <button type="button" class="calculate-area">Calculate</button>
+      </div>
+
+      <div class="result-container">
+        <p class="result"></p>
+      </div>
+    </main>
+  </body>
+</html>
