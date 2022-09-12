@@ -81,6 +81,28 @@ const initQuizSection = () => {
 };
 
 /**
+ * Calculate Hypotenuse
+ */
+
+const initHypotenuseCalculation = () => {
+  const inputValues = document.querySelectorAll('.h-input');
+  const calculateBtn = document.querySelector('.calculate-hypotenuse');
+  const result = document.querySelector('.result');
+
+  const performCalculation = () => {
+    let base = parseInt(inputValues[0].value);
+    let height = parseInt(inputValues[1].value);
+
+    let sumOfSqrs = base * base + height * height;
+    let length = Math.sqrt(sumOfSqrs);
+
+    result.textContent = `Length of hypotenuse is ${length || 0}`;
+  };
+
+  calculateBtn.addEventListener('click', performCalculation);
+};
+
+/**
  * Area of Triangle
  */
 
@@ -142,6 +164,7 @@ const App = () => {
     initQuizSection();
   } else if (pathname === HYPOTENUSE_PAGE) {
     navContents[2].classList.add('nav-active');
+    initHypotenuseCalculation();
   } else if (pathname === AREA_PAGE) {
     navContents[3].classList.add('nav-active');
     initAreaOfTriangleSection();
