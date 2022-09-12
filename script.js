@@ -48,7 +48,37 @@ const initIsTriangleSection = () => {
  * Quiz Section
  */
 
-const initQuizSection = () => {};
+const initQuizSection = () => {
+  const submitBtn = document.querySelector('.quiz-btn');
+  const quizForm = document.querySelector('.form-container');
+  const result = document.querySelector('.quiz-result');
+
+  let answers = [
+    '30,60,90',
+    '1,1,2',
+    '30',
+    'equiangular',
+    'congruent polygons',
+    '4,8.5,14',
+  ];
+
+  const calculateResult = (event) => {
+    event.preventDefault();
+    let formData = new FormData(quizForm);
+    let score = 0,
+      index = 0;
+    for (let result of formData.values()) {
+      if (result === answers[index]) {
+        score += 1;
+      }
+      index++;
+    }
+
+    result.textContent = `You have scored ${score}/6 🎉`;
+  };
+
+  submitBtn.addEventListener('click', calculateResult);
+};
 
 /**
  * Area of Triangle

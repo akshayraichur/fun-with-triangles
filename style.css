@@ -118,6 +118,19 @@ body {
   border: 2px dashed var(--fallback-color);
 }
 
+.quiz-question {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+}
+
+.quiz-ans-container {
+  display: flex;
+  margin: 1rem 0;
+  column-gap: 10px;
+  width: 100%;
+  color: var(--fallback-color);
+}
+
 .result {
   text-align: center;
   font-size: 1.2rem;
